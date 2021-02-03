@@ -2,7 +2,7 @@ import sys
 import unittest
 import torch
 
-sys.path.append("yolo_metric")
+sys.path.append("D:/Codes/codes_from_github/yolo/yolov1_pytorch/yolo_metric")
 from nms import nms
 
 for x in sys.path:

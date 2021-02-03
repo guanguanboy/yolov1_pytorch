@@ -93,11 +93,12 @@ def mean_average_precision(
 
         FP_cumsum = torch.cumsum(FP, dim=0)
         recalls = TP_cumsum / (total_true_bboxes + epsilon)
-        precisions = torch.divide(TP_cumsum, (TP_cumsum + FP_cumsum + epsilon))
+        #precisions = torch.divide(TP_cumsum, (TP_cumsum + FP_cumsum + epsilon))
+        precisions = torch.div(TP_cumsum, (TP_cumsum + FP_cumsum + epsilon))
 
         #step4， plot the precision-recall graph
-        precisions = torch.cat((torch.tensor([1]), precisions))
-        recalls = torch.cat((torch.tensor([0]), recalls))
+        precisions = torch.cat((torch.tensor([1.0]), precisions))
+        recalls = torch.cat((torch.tensor([0.0]), recalls))
 
         #step5: calculate area under pr curve
         average_precisions.append(torch.trapz(precisions, recalls))

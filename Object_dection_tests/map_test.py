@@ -2,7 +2,7 @@ import sys
 import unittest
 import torch
 
-sys.path.append("yolo_metric")
+sys.path.append("D:/Codes/codes_from_github/yolo/yolov1_pytorch/yolo_metric")
 from mean_avg_precision import mean_average_precision
 
 class TestMeanAveragePrecision(unittest.TestCase):
